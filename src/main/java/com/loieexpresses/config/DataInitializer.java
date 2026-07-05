@@ -28,9 +28,9 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        if (!userRepository.existsByUsername("admin")) {
+        if (!userRepository.existsByUsername("superadmin")) {
             userRepository.save(User.builder()
-                    .username("admin")
+                    .username("superadmin")
                     .password(encoder.encode("admin123"))
                     .fullName("Super Administrator")
                     .email("admin@loieexpresses.co.tz")
